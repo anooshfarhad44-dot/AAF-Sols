@@ -26,8 +26,8 @@ const Footer = () => {
                         <div>
                             <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase">Contact Us</h2>
                             <ul className="text-gray-500 font-medium space-y-4">
-                                <li><span className="hover:underline cursor-pointer">info@aaf-solutions.com</span></li>
-                                <li><span className="hover:underline cursor-pointer">+92 300 1234567</span></li>
+                                <li><a href="mailto:info@aagraphicstudio.com" className="hover:underline cursor-pointer">info@aagraphicstudio.com</a></li>
+                                <li><a href="https://wa.me/923485152978" className="hover:underline cursor-pointer">0348 5152978</a></li>
                             </ul>
                         </div>
                     </div>

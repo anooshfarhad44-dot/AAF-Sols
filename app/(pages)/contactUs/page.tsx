@@ -11,7 +11,9 @@ import {
   MapPin, 
   Clock, 
   Sparkles, 
-  Check
+  Check,
+  Phone,
+  Globe
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
@@ -87,14 +89,22 @@ const ContactUs = () => {
             className="lg:col-span-5 space-y-6"
           >
             <div className="p-8 rounded-3xl bg-white border border-stone-200/80 shadow-md space-y-6">
-              <h2 className="text-2xl font-bold text-stone-900">Direct Studio Channels</h2>
+              <div className="flex items-center justify-between pb-2 border-b border-stone-100">
+                <div>
+                  <h2 className="text-2xl font-bold text-stone-900">Direct Studio Channels</h2>
+                  <p className="text-amber-700 text-xs font-semibold mt-0.5">&ldquo;Your Vision, Our Creation.&rdquo;</p>
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
+                  Let&apos;s Create Together
+                </span>
+              </div>
               <p className="text-stone-600 text-sm leading-relaxed">
-                Connect with our team for instant quotes, artwork file reviews, or physical paper &amp; finish sample consultations.
+                Connect directly with our studio founders for immediate design consultation, custom quotes, or physical sample reviews.
               </p>
 
               {/* WhatsApp Quick Link */}
               <a
-                href="https://wa.me/923001234567?text=Hello%20AA%20Graphic%20Studio,%20I%20would%20like%20a%20quote%20for%20design/print."
+                href="https://wa.me/923485152978?text=Hello%20AA%20Graphic%20Studio,%20I%20would%20like%20a%20quote%20for%20design/print."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition-all group shadow-sm"
@@ -102,28 +112,61 @@ const ContactUs = () => {
                 <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700 flex-shrink-0 group-hover:scale-110 transition-transform">
                   <MessageCircle size={22} />
                 </div>
-                <div>
-                  <p className="text-xs font-mono uppercase text-emerald-800 font-bold">Fastest Response</p>
-                  <p className="font-bold text-stone-900 text-sm">+92 300 1234567 (WhatsApp)</p>
-                  <p className="text-[11px] text-stone-500">Chat with our print &amp; design specialist</p>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between">
+                    <p className="text-xs font-mono uppercase text-emerald-800 font-bold">Fastest Response &bull; WhatsApp</p>
+                    <span className="text-[10px] bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded-full font-bold">Online</span>
+                  </div>
+                  <p className="font-extrabold text-stone-900 text-base">0348 5152978</p>
+                  <p className="text-[11px] text-stone-500">Instant chat &amp; artwork file drop</p>
                 </div>
               </a>
 
-              {/* Email */}
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-stone-50 border border-stone-200/80">
+              {/* Direct Phone Call */}
+              <a
+                href="tel:+923099634495"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-blue-50 border border-blue-200 hover:bg-blue-100 transition-all group shadow-sm"
+              >
+                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-700 flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <Phone size={22} />
+                </div>
+                <div className="flex-1">
+                  <p className="text-xs font-mono uppercase text-blue-800 font-bold">Call Us Direct</p>
+                  <p className="font-extrabold text-stone-900 text-base">0309 9634495</p>
+                  <p className="text-[11px] text-stone-500">Direct phone line for orders &amp; inquiries</p>
+                </div>
+              </a>
+
+              {/* Official Email */}
+              <a
+                href="mailto:info@aagraphicstudio.com"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-stone-50 border border-stone-200/80 hover:bg-stone-100/80 transition-all"
+              >
                 <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 flex-shrink-0">
                   <Mail size={22} />
                 </div>
                 <div>
                   <p className="text-xs font-mono uppercase text-stone-500">Official Studio Email</p>
-                  <p className="font-semibold text-stone-900 text-sm">contact@aagraphicstudio.com</p>
-                  <p className="text-[11px] text-stone-500">Send vector files &amp; RFQs</p>
+                  <p className="font-semibold text-stone-900 text-sm">info@aagraphicstudio.com</p>
+                  <p className="text-[11px] text-stone-500">Send high-res files &amp; RFQs</p>
+                </div>
+              </a>
+
+              {/* Official Website */}
+              <div className="flex items-center gap-4 p-4 rounded-2xl bg-stone-50 border border-stone-200/80">
+                <div className="w-12 h-12 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 flex-shrink-0">
+                  <Globe size={22} />
+                </div>
+                <div>
+                  <p className="text-xs font-mono uppercase text-stone-500">Official Studio Website</p>
+                  <p className="font-semibold text-stone-900 text-sm">www.aagraphicstudio.com</p>
+                  <p className="text-[11px] text-stone-500">Graphic design &amp; printing portal</p>
                 </div>
               </div>
 
               {/* Location */}
               <div className="flex items-center gap-4 p-4 rounded-2xl bg-stone-50 border border-stone-200/80">
-                <div className="w-12 h-12 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-600 flex-shrink-0">
                   <MapPin size={22} />
                 </div>
                 <div>

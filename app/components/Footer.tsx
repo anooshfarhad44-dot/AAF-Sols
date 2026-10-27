@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import StudioLogo from './ui/StudioLogo';
-import { Mail, Phone, MapPin, Printer, Palette, Sparkles, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Printer, Palette, Sparkles, Clock, MessageCircle, Globe } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -19,8 +19,8 @@ const Footer = () => {
                   <img src="/aa-studio-logo.jpg" alt="AA Graphic Studio" width={46} height={46} className="object-cover" />
                 </div>
                 <div>
-                  <p className="font-black text-white text-xl tracking-tight">AA <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">GRAPHIC</span></p>
-                  <p className="text-stone-500 text-[10px] tracking-widest uppercase font-medium">Design · Print · Branding</p>
+                  <p className="font-black text-white text-xl tracking-tight">AA <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">GRAPHIC STUDIO</span></p>
+                  <p className="text-amber-400/90 text-[11px] tracking-wide font-medium italic">&ldquo;Your Vision, Our Creation.&rdquo;</p>
                 </div>
               </div>
             </Link>
@@ -85,15 +85,27 @@ const Footer = () => {
                 <span>Islamabad, Pakistan &bull; Shipping Nationwide</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail size={16} className="text-amber-400 flex-shrink-0" />
-                <a href="mailto:contact@aagraphicstudio.com" className="hover:text-amber-400 transition-colors">
-                  contact@aagraphicstudio.com
+                <MessageCircle size={16} className="text-emerald-400 flex-shrink-0" />
+                <a href="https://wa.me/923485152978?text=Hello%20AA%20Graphic%20Studio" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">
+                  0348 5152978 (WhatsApp)
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone size={16} className="text-amber-400 flex-shrink-0" />
-                <a href="https://wa.me/923000000000" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
-                  +92 300 1234567 (WhatsApp)
+                <a href="tel:+923099634495" className="hover:text-amber-400 transition-colors">
+                  0309 9634495 (Call Us)
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Mail size={16} className="text-amber-400 flex-shrink-0" />
+                <a href="mailto:info@aagraphicstudio.com" className="hover:text-amber-400 transition-colors">
+                  info@aagraphicstudio.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Globe size={16} className="text-amber-400 flex-shrink-0" />
+                <a href="https://www.aagraphicstudio.com" className="hover:text-amber-400 transition-colors">
+                  www.aagraphicstudio.com
                 </a>
               </li>
               <li className="flex items-center gap-2.5 text-stone-500 text-xs">

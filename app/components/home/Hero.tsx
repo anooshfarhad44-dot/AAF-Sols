@@ -24,8 +24,8 @@ const heroSlides = [
     image: "/aa-studio-hero.jpg",
     tag: "AA Graphic Studio",
     tagColor: "bg-orange-100 text-orange-700 border-orange-200",
-    caption: "Your Creative Design-to-Print Partner",
-    subcaption: "Islamabad, Pakistan · Nationwide Delivery",
+    caption: "Your Vision, Our Creation — Let's Create Together",
+    subcaption: "Call: 0309 9634495 · WhatsApp: 0348 5152978",
   },
 ];
 
@@ -77,9 +77,9 @@ const Hero = () => {
           className="lg:col-span-6 space-y-6 text-left"
         >
           {/* Studio Tag */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-200 text-amber-700 text-xs font-semibold tracking-wide shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/90 border border-amber-200 text-amber-800 text-xs font-semibold tracking-wide shadow-sm">
             <Sparkles size={14} className="text-amber-600" />
-            <span>WELCOME TO AA GRAPHIC STUDIO</span>
+            <span>AA GRAPHIC STUDIO &bull; YOUR VISION, OUR CREATION</span>
           </div>
 
           {/* Main Title */}

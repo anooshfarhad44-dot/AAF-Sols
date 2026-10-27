@@ -35,13 +35,13 @@ const CTA = () => {
           </Link>
 
           <a
-            href="https://wa.me/923001234567?text=Hello%20AA%20Graphic%20Studio,%20I%20am%20interested%20in%20your%20services"
+            href="https://wa.me/923485152978?text=Hello%20AA%20Graphic%20Studio,%20I%20am%20interested%20in%20your%20services"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-semibold text-sm bg-white/15 hover:bg-white/25 text-white border border-white/30 transition-all hover:-translate-y-0.5"
           >
             <MessageCircle size={18} />
-            <span>Chat on WhatsApp</span>
+            <span>WhatsApp (0348 5152978)</span>
           </a>
         </div>
 
