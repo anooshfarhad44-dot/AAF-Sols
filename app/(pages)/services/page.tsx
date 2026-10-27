@@ -189,35 +189,35 @@ const printingServices = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-[#09090b] text-zinc-100 min-h-screen">
+    <main className="bg-[#fafaf9] text-stone-900 min-h-screen">
       
       {/* Header Banner */}
-      <section className="relative py-24 text-center overflow-hidden border-b border-zinc-800">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-amber-500/10 blur-[140px] rounded-full pointer-events-none" />
+      <section className="relative py-24 text-center overflow-hidden border-b border-stone-200/80 bg-gradient-to-b from-amber-50/50 via-white to-[#fafaf9]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-amber-400/10 blur-[130px] rounded-full pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <span className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-zinc-900 border border-amber-500/30 text-amber-400 mb-6 inline-block">
+          <span className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white border border-amber-300 text-amber-700 shadow-sm mb-6 inline-block">
             AA GRAPHIC STUDIO SERVICES
           </span>
-          <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-6 text-stone-900">
             Graphic Design &amp; <br />
-            <span className="bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-700 bg-clip-text text-transparent">
               Precision Printing Press
             </span>
           </h1>
-          <p className="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Specialized solutions designed to craft your visual identity and manufacture tangible print assets with unparalleled quality.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
             <a
               href="#graphic-design"
-              className="px-6 py-3 rounded-full text-xs font-bold bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 transition-all"
+              className="px-6 py-3 rounded-full text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 transition-all shadow-sm"
             >
               &darr; Graphic Design Solutions
             </a>
             <a
               href="#printing-press"
-              className="px-6 py-3 rounded-full text-xs font-bold bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 border border-purple-500/30 transition-all"
+              className="px-6 py-3 rounded-full text-xs font-bold bg-purple-50 hover:bg-purple-100 text-purple-800 border border-purple-200 transition-all shadow-sm"
             >
               &darr; Printing Press Services
             </a>
@@ -226,25 +226,25 @@ export default function ServicesPage() {
       </section>
 
       {/* SECTION 1: GRAPHIC DESIGN */}
-      <section id="graphic-design" className="py-24 border-b border-zinc-800/80 relative">
+      <section id="graphic-design" className="py-24 border-b border-stone-200/80 relative bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3">
                 <Palette size={14} />
                 <span>Pillar 01</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900">
                 Graphic Designing Services
               </h2>
-              <p className="text-zinc-400 text-sm sm:text-base mt-2 max-w-xl">
+              <p className="text-stone-600 text-sm sm:text-base mt-2 max-w-xl">
                 Pixel-perfect vector designs, branding systems, and marketing graphics crafted to command attention.
               </p>
             </div>
 
             <Link
               href="/contactUs"
-              className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 hover:text-amber-300"
+              className="inline-flex items-center gap-2 text-xs font-bold text-amber-700 hover:text-amber-800"
             >
               <span>Request Design Consultation</span>
               <ArrowRight size={14} />
@@ -260,25 +260,25 @@ export default function ServicesPage() {
       </section>
 
       {/* SECTION 2: PRINTING PRESS */}
-      <section id="printing-press" className="py-24 border-b border-zinc-800/80 bg-zinc-950/60 relative">
+      <section id="printing-press" className="py-24 border-b border-stone-200/80 bg-stone-50/70 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-wider mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-50 border border-purple-200 text-purple-800 text-xs font-bold uppercase tracking-wider mb-3">
                 <Printer size={14} />
                 <span>Pillar 02</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900">
                 Commercial &amp; Luxury Printing
               </h2>
-              <p className="text-zinc-400 text-sm sm:text-base mt-2 max-w-xl">
+              <p className="text-stone-600 text-sm sm:text-base mt-2 max-w-xl">
                 Equipped with Heidelberg offset and high-speed digital presses for short and bulk production.
               </p>
             </div>
 
             <Link
               href="/contactUs"
-              className="inline-flex items-center gap-2 text-xs font-bold text-purple-400 hover:text-purple-300"
+              className="inline-flex items-center gap-2 text-xs font-bold text-purple-700 hover:text-purple-800"
             >
               <span>Get Immediate Print Quote</span>
               <ArrowRight size={14} />
@@ -294,39 +294,39 @@ export default function ServicesPage() {
       </section>
 
       {/* Technical Standards & Substrates */}
-      <section className="py-20 bg-[#09090b] border-b border-zinc-800/80">
+      <section className="py-20 bg-white border-b border-stone-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <span className="text-xs font-mono uppercase tracking-widest text-amber-700 font-bold">
               INDUSTRY SPECIFICATIONS
             </span>
-            <h2 className="text-3xl font-extrabold text-white mt-2">
+            <h2 className="text-3xl font-extrabold text-stone-900 mt-2">
               Our Technical Print &amp; File Standards
             </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800">
-              <h3 className="font-bold text-white text-base mb-2">Color Space</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-sm">
+              <h3 className="font-bold text-stone-900 text-base mb-2">Color Space</h3>
+              <p className="text-xs text-stone-600 leading-relaxed">
                 Calibrated CMYK (FOGRA39) &amp; Pantone Matching System (PMS) to ensure 100% color accuracy on paper.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800">
-              <h3 className="font-bold text-white text-base mb-2">Resolution</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-sm">
+              <h3 className="font-bold text-stone-900 text-base mb-2">Resolution</h3>
+              <p className="text-xs text-stone-600 leading-relaxed">
                 Strict 300+ DPI minimum for all print raster graphics. Vector lines (.AI, .EPS) printed at true hardware DPI.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800">
-              <h3 className="font-bold text-white text-base mb-2">Paper Stocks</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-sm">
+              <h3 className="font-bold text-stone-900 text-base mb-2">Paper Stocks</h3>
+              <p className="text-xs text-stone-600 leading-relaxed">
                 From lightweight 128gsm art paper to heavy 400gsm art card, recycled kraft, textured card, and synthetic vinyl.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800">
-              <h3 className="font-bold text-white text-base mb-2">Pre-Press Proofs</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-sm">
+              <h3 className="font-bold text-stone-900 text-base mb-2">Pre-Press Proofs</h3>
+              <p className="text-xs text-stone-600 leading-relaxed">
                 3mm bleeds, cut safety margins, and digital PDF / hard-copy sample proofs provided before mass production.
               </p>
             </div>
@@ -335,13 +335,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Workflow Process */}
-      <section className="py-20 bg-zinc-950/60 border-b border-zinc-800/80">
+      <section className="py-20 bg-stone-50/70 border-b border-stone-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">
+            <span className="text-xs font-mono uppercase tracking-widest text-amber-700 font-bold">
               STREAMLINED WORKFLOW
             </span>
-            <h2 className="text-3xl font-extrabold text-white mt-2">
+            <h2 className="text-3xl font-extrabold text-stone-900 mt-2">
               From Design Brief to Printed Reality
             </h2>
           </div>
@@ -369,12 +369,12 @@ export default function ServicesPage() {
                 desc: "High-precision press run, specialty finishing, and doorstep delivery across Pakistan."
               }
             ].map((st, i) => (
-              <div key={i} className="p-6 rounded-3xl bg-zinc-900/30 border border-zinc-800 relative">
+              <div key={i} className="p-6 rounded-3xl bg-white border border-stone-200/80 shadow-sm relative hover:border-amber-300 transition-colors">
                 <span className="text-4xl font-black text-amber-500/20 font-mono mb-4 block">
                   {st.step}
                 </span>
-                <h3 className="text-lg font-bold text-white mb-2">{st.title}</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed">{st.desc}</p>
+                <h3 className="text-lg font-bold text-stone-900 mb-2">{st.title}</h3>
+                <p className="text-xs text-stone-600 leading-relaxed">{st.desc}</p>
               </div>
             ))}
           </div>
@@ -382,44 +382,44 @@ export default function ServicesPage() {
       </section>
 
       {/* Services FAQ */}
-      <section className="py-20 bg-[#09090b]">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl font-bold text-stone-900">
               Frequently Asked Questions
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-400 mt-2">
+            <p className="text-xs sm:text-sm text-stone-600 mt-2">
               Common questions about our graphic design and printing turnaround.
             </p>
           </div>
 
           <div className="space-y-4">
-            <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800">
-              <h3 className="font-bold text-sm text-white mb-2 flex items-center gap-2">
-                <HelpCircle size={16} className="text-amber-400" />
+            <div className="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-sm">
+              <h3 className="font-bold text-sm text-stone-900 mb-2 flex items-center gap-2">
+                <HelpCircle size={16} className="text-amber-600" />
                 What file formats will I receive for Graphic Design projects?
               </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed pl-6">
+              <p className="text-xs text-stone-600 leading-relaxed pl-6">
                 You will receive full master vector files (.AI, .EPS, .SVG) along with high-res print-ready PDFs and transparent PNGs for web and social media.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800">
-              <h3 className="font-bold text-sm text-white mb-2 flex items-center gap-2">
-                <HelpCircle size={16} className="text-amber-400" />
+            <div className="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-sm">
+              <h3 className="font-bold text-sm text-stone-900 mb-2 flex items-center gap-2">
+                <HelpCircle size={16} className="text-amber-600" />
                 What is the minimum order quantity (MOQ) for printing?
               </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed pl-6">
+              <p className="text-xs text-stone-600 leading-relaxed pl-6">
                 For digital printing (business cards, flyers, standees), we can print as few as 50 to 100 units. For high-volume offset printing or custom packaging boxes, cost benefits start around 500 to 1,000 units.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800">
-              <h3 className="font-bold text-sm text-white mb-2 flex items-center gap-2">
-                <HelpCircle size={16} className="text-amber-400" />
+            <div className="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-sm">
+              <h3 className="font-bold text-sm text-stone-900 mb-2 flex items-center gap-2">
+                <HelpCircle size={16} className="text-amber-600" />
                 Can you print designs that I already have prepared?
               </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed pl-6">
+              <p className="text-xs text-stone-600 leading-relaxed pl-6">
                 Yes! Send us your artwork in PDF, AI, or high-res TIFF. Our pre-press team will inspect it for correct bleeds and CMYK colors before printing.
               </p>
             </div>

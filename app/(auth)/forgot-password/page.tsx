@@ -31,7 +31,7 @@ export default function ForgotPasswordPage() {
         <div className="flex items-center justify-center min-h-[calc(100vh-80px)] bg-gray-50/50 p-4">
             <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border border-gray-100">
                 <div className="text-center mb-8">
-                    <Link href="/login" className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:underline mb-4">
+                    <Link href="/login" className="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm hover:underline mb-4">
                         <ArrowLeft className="h-4 w-4" />
                         Back to login
                     </Link>
@@ -59,11 +59,11 @@ export default function ForgotPasswordPage() {
                         <div className="space-y-2">
                             <label className="text-sm font-semibold text-gray-700 block ml-1">Email Address</label>
                             <div className="relative group">
-                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors h-5 w-5" />
+                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-amber-500 transition-colors h-5 w-5" />
                                 <input
                                     type="email"
                                     required
-                                    className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all"
+                                    className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 outline-none transition-all"
                                     placeholder="name@example.com"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
@@ -74,7 +74,7 @@ export default function ForgotPasswordPage() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-blue-500/25 transition-all active:scale-[0.98] disabled:opacity-70 disabled:active:scale-100 flex items-center justify-center gap-2"
+                            className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-amber-500/20 transition-all active:scale-[0.98] disabled:opacity-70 disabled:active:scale-100 flex items-center justify-center gap-2"
                         >
                             {loading ? (
                                 <>

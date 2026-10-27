@@ -1,32 +1,40 @@
 import Link from 'next/link';
 import StudioLogo from './ui/StudioLogo';
-import { Mail, Phone, MapPin, Printer, Palette, Sparkles, Clock, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Printer, Palette, Sparkles, Clock } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-950 border-t border-zinc-800 text-zinc-400 relative overflow-hidden">
-      {/* Glow highlight */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
-      
+    <footer className="bg-stone-900 border-t border-stone-800 text-stone-400 relative overflow-hidden">
+      {/* Top accent line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-amber-500/60 to-transparent" />
+
       <div className="mx-auto w-full max-w-7xl px-6 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
-          
+
           {/* Brand info */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-block group">
-              <StudioLogo size="lg" />
+              <div className="flex items-center gap-3 select-none">
+                <div className="relative rounded-xl overflow-hidden border border-amber-500/30 shadow-[0_0_16px_rgba(217,119,6,0.2)]">
+                  <img src="/aa-studio-logo.jpg" alt="AA Graphic Studio" width={46} height={46} className="object-cover" />
+                </div>
+                <div>
+                  <p className="font-black text-white text-xl tracking-tight">AA <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">GRAPHIC</span></p>
+                  <p className="text-stone-500 text-[10px] tracking-widest uppercase font-medium">Design · Print · Branding</p>
+                </div>
+              </div>
             </Link>
-            <p className="text-zinc-400 text-sm leading-relaxed max-w-sm">
-              AA Graphic Studio is your complete design-to-print partner. From iconic brand identities and vector graphics to industrial offset and luxury specialty printing, we turn your creative ideas into high-impact reality.
+            <p className="text-stone-400 text-sm leading-relaxed max-w-sm">
+              AA Graphic Studio is your complete design-to-print partner. From iconic brand identities and vector graphics to industrial offset and luxury specialty printing.
             </p>
             <div className="pt-2 flex flex-wrap gap-2 text-xs">
-              <span className="px-2.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-amber-400 font-medium">
+              <span className="px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 font-medium">
                 &bull; CMYK &amp; Pantone Certified
               </span>
-              <span className="px-2.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 font-medium">
+              <span className="px-2.5 py-1 rounded-full bg-stone-800 border border-stone-700 text-stone-300 font-medium">
                 &bull; Vector Precision
               </span>
-              <span className="px-2.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 font-medium">
+              <span className="px-2.5 py-1 rounded-full bg-stone-800 border border-stone-700 text-stone-300 font-medium">
                 &bull; Express Turnaround
               </span>
             </div>
@@ -34,77 +42,41 @@ const Footer = () => {
 
           {/* Graphic Design Services */}
           <div>
-            <h3 className="text-sm font-bold text-zinc-100 uppercase tracking-wider mb-4 flex items-center gap-2">
+            <h3 className="text-sm font-bold text-stone-100 uppercase tracking-wider mb-4 flex items-center gap-2">
               <Palette size={16} className="text-amber-400" />
               Graphic Design
             </h3>
             <ul className="space-y-2.5 text-sm">
-              <li>
-                <Link href="/services#logo-branding" className="hover:text-amber-400 transition-colors">
-                  Logo &amp; Brand Identity
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#social-media" className="hover:text-amber-400 transition-colors">
-                  Social Media Creatives &amp; Ads
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#packaging-design" className="hover:text-amber-400 transition-colors">
-                  Packaging &amp; Label Design
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#marketing-collateral" className="hover:text-amber-400 transition-colors">
-                  Brochures, Flyers &amp; Catalogs
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#vector-art" className="hover:text-amber-400 transition-colors">
-                  Vector Art &amp; Illustrations
-                </Link>
-              </li>
+              {["Logo & Brand Identity", "Social Media Creatives & Ads", "Packaging & Label Design", "Brochures, Flyers & Catalogs", "Vector Art & Illustrations"].map((item, i) => (
+                <li key={i}>
+                  <Link href="/services" className="hover:text-amber-400 transition-colors">
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Printing Services */}
           <div>
-            <h3 className="text-sm font-bold text-zinc-100 uppercase tracking-wider mb-4 flex items-center gap-2">
-              <Printer size={16} className="text-purple-400" />
+            <h3 className="text-sm font-bold text-stone-100 uppercase tracking-wider mb-4 flex items-center gap-2">
+              <Printer size={16} className="text-violet-400" />
               Printing Press
             </h3>
             <ul className="space-y-2.5 text-sm">
-              <li>
-                <Link href="/services#business-cards" className="hover:text-amber-400 transition-colors">
-                  Luxury Business Cards &amp; Stationery
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#large-format" className="hover:text-amber-400 transition-colors">
-                  Flex &amp; Large Format Banners
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#apparel-merch" className="hover:text-amber-400 transition-colors">
-                  Custom Apparel &amp; Merch Printing
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#custom-boxes" className="hover:text-amber-400 transition-colors">
-                  Rigid Boxes &amp; Packaging Print
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#luxury-finishing" className="hover:text-amber-400 transition-colors">
-                  Spot UV &amp; Gold Foil Stamping
-                </Link>
-              </li>
+              {["Luxury Business Cards & Stationery", "Flex & Large Format Banners", "Custom Apparel & Merch Printing", "Rigid Boxes & Packaging Print", "Spot UV & Gold Foil Stamping"].map((item, i) => (
+                <li key={i}>
+                  <Link href="/services" className="hover:text-amber-400 transition-colors">
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact & Studio Details */}
           <div>
-            <h3 className="text-sm font-bold text-zinc-100 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-bold text-stone-100 uppercase tracking-wider mb-4">
               Studio Details
             </h3>
             <ul className="space-y-3 text-sm">
@@ -124,24 +96,24 @@ const Footer = () => {
                   +92 300 1234567 (WhatsApp)
                 </a>
               </li>
-              <li className="flex items-center gap-2.5 text-zinc-500 text-xs">
+              <li className="flex items-center gap-2.5 text-stone-500 text-xs">
                 <Clock size={14} className="flex-shrink-0" />
-                <span>Mon – Sat: 9:00 AM – 9:00 PM</span>
+                <span>Mon &ndash; Sat: 9:00 AM &ndash; 9:00 PM</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <hr className="my-8 border-zinc-800/80" />
+        <hr className="my-8 border-stone-800" />
 
-        <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
           <p>
-            &copy; {new Date().getFullYear()} <span className="text-zinc-300 font-semibold">AA Graphic Studio</span>. All Rights Reserved. Specializing in Graphic Designing &amp; High-End Printing.
+            &copy; {new Date().getFullYear()} <span className="text-stone-300 font-semibold">AA Graphic Studio</span>. All Rights Reserved. Graphic Designing &amp; High-End Printing.
           </p>
           <div className="flex gap-6">
-            <Link href="/services" className="hover:text-zinc-300 transition-colors">Services</Link>
-            <Link href="/aboutUs" className="hover:text-zinc-300 transition-colors">About Us</Link>
-            <Link href="/contactUs" className="hover:text-zinc-300 transition-colors">Get a Quote</Link>
+            <Link href="/services" className="hover:text-stone-300 transition-colors">Services</Link>
+            <Link href="/aboutUs" className="hover:text-stone-300 transition-colors">About Us</Link>
+            <Link href="/contactUs" className="hover:text-stone-300 transition-colors">Get a Quote</Link>
           </div>
         </div>
       </div>

@@ -54,12 +54,12 @@ export default function RegisterPage() {
                     <div className="space-y-2">
                         <label className="text-sm font-semibold text-gray-700 block ml-1">Full Name</label>
                         <div className="relative group">
-                            <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors h-5 w-5" />
+                            <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-amber-500 transition-colors h-5 w-5" />
                             <input
                                 name="name"
                                 type="text"
                                 required
-                                className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all"
+                                className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 outline-none transition-all"
                                 placeholder="John Doe"
                                 value={formData.name}
                                 onChange={handleChange}
@@ -70,12 +70,12 @@ export default function RegisterPage() {
                     <div className="space-y-2">
                         <label className="text-sm font-semibold text-gray-700 block ml-1">Email Address</label>
                         <div className="relative group">
-                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors h-5 w-5" />
+                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-amber-500 transition-colors h-5 w-5" />
                             <input
                                 name="email"
                                 type="email"
                                 required
-                                className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all"
+                                className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 outline-none transition-all"
                                 placeholder="name@example.com"
                                 value={formData.email}
                                 onChange={handleChange}
@@ -86,13 +86,13 @@ export default function RegisterPage() {
                     <div className="space-y-2">
                         <label className="text-sm font-semibold text-gray-700 block ml-1">Password</label>
                         <div className="relative group">
-                            <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors h-5 w-5" />
+                            <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-amber-500 transition-colors h-5 w-5" />
                             <input
                                 name="password"
                                 type="password"
                                 required
                                 minLength={6}
-                                className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all"
+                                className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 outline-none transition-all"
                                 placeholder="At least 6 characters"
                                 value={formData.password}
                                 onChange={handleChange}
@@ -103,7 +103,7 @@ export default function RegisterPage() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-blue-500/25 transition-all active:scale-[0.98] disabled:opacity-70 disabled:active:scale-100 flex items-center justify-center gap-2"
+                        className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-amber-500/20 transition-all active:scale-[0.98] disabled:opacity-70 disabled:active:scale-100 flex items-center justify-center gap-2"
                     >
                         {loading ? (
                             <>
@@ -119,7 +119,7 @@ export default function RegisterPage() {
                 <div className="mt-8 text-center">
                     <p className="text-gray-600">
                         Already have an account?{' '}
-                        <Link href="/login" className="text-blue-600 font-bold hover:text-blue-700 transition-colors">
+                        <Link href="/login" className="text-amber-600 font-bold hover:text-amber-700 transition-colors">
                             Log in
                         </Link>
                     </p>
