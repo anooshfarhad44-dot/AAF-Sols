@@ -9,8 +9,9 @@ interface CardProps {
 export default function Card({ children, className = "", hoverEffect = true }: CardProps) {
     return (
         <div
-            className={`bg-white rounded-2xl p-6 shadow-sm border border-gray-100 ${hoverEffect ? "hover:shadow-xl hover:-translate-y-1 transition-all duration-300" : ""
-                } ${className}`}
+            className={`bg-zinc-900/40 rounded-3xl p-6 sm:p-8 border border-zinc-800 ${
+                hoverEffect ? "hover:border-zinc-700 hover:shadow-2xl hover:shadow-amber-500/5 hover:-translate-y-1 transition-all duration-300" : ""
+            } ${className}`}
         >
             {children}
         </div>
