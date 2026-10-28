@@ -62,16 +62,57 @@ const categoryConfig: Record<string, { id: string; label: string; badgeClass: st
 
 /**
  * Format raw filename into a clean, human-readable title
- * Example: "08_Business_Card_1.pdf" -> "Business Card 1"
- * Example: "ABC_Modern_Card_1_Aurora_Tech.pdf" -> "ABC Modern Card 1 Aurora Tech"
  */
 function formatTitle(fileName: string): string {
   const withoutExt = fileName.replace(/\.pdf$/i, '');
   // Remove numeric prefixes like "01_", "08_", "10_"
   const cleanPrefix = withoutExt.replace(/^\d+[_-\s]+/, '');
-  // Replace underscores and dashes with spaces
-  const withSpaces = cleanPrefix.replace(/[_]+/g, ' ').replace(/\s+/g, ' ').trim();
-  return withSpaces;
+  // Replace underscores with spaces
+  let formatted = cleanPrefix.replace(/[_]+/g, ' ').replace(/\s+/g, ' ').trim();
+  
+  // Clean up parenthesis formatting if any (e.g. "4 Pages" or "One Page")
+  formatted = formatted
+    .replace(/\bOne Page Landscape\b/i, 'One-Page Landscape')
+    .replace(/\bOne Page\b/i, 'Single Page')
+    .replace(/\b(\d+)\s+Pages\b/i, '($1 Pages)');
+    
+  return formatted;
+}
+
+/**
+ * Automatically determine item dimensions or format based on folder and filename
+ */
+function getDimensions(folderName: string, fileName: string): string | undefined {
+  if (folderName === 'BussinesCard') return '3.5" × 2.0" (Card)';
+  if (folderName === 'Menus') {
+    if (fileName.includes('4_Pages')) return '4-Page Menu Booklet';
+    if (fileName.includes('3_Pages')) return '3-Page Menu Spread';
+    if (fileName.includes('Landscape')) return 'Single Page (Landscape)';
+    if (fileName.includes('One_Page')) return 'Single Page Dine-In';
+    return 'Dine-In Menu';
+  }
+  if (folderName === 'Posters') return 'A3 / Large Poster';
+  if (folderName === 'Certificates') return 'A4 / 300 DPI';
+  if (folderName === 'BookCovers') return 'Full Wrap & Spine';
+  return undefined;
+}
+
+/**
+ * Automatically generate tailored description for specific files
+ */
+function getDescription(folderName: string, fileName: string, defaultDesc: string): string {
+  if (fileName.includes('Desi_Restaurant')) return 'Authentic traditional & desi cuisine menu featuring curries, tandoor specials, and beverage combos.';
+  if (fileName.includes('Fast_Food')) return 'High-energy fast food landscape spread with burgers, loaded fries, meal deals, and pricing badges.';
+  if (fileName.includes('Luxury_Restaurant')) return 'Comprehensive 4-page fine dining booklet layout with appetizers, steaks, signature desserts, and beverage pairings.';
+  if (fileName.includes('Modern_Cafe')) return 'Specialty coffee, bakery, breakfast, and artisan cafe 3-page menu with modern minimalist spacing.';
+  if (fileName.includes('Charcoal_BBQ')) return 'Family platters, charcoal grilled specialties, karahi, and BBQ feast 4-page menu layout.';
+  if (fileName.includes('Hotel_Menu')) return 'Sophisticated multi-course dining menu designed with elegant serif typography and decorative border dividers.';
+  if (fileName.includes('Burger_Hub')) return 'Vibrant fast-casual menu layout featuring item categories, promotional deal combos, and bold price callouts.';
+  if (fileName.includes('Aurora_Tech')) return 'Futuristic gradient tech identity card with sleek typography and QR profile integration.';
+  if (fileName.includes('Black_Gold_Foil')) return 'Premium black matte finish with gold foil stamped accents and executive typography.';
+  if (fileName.includes('Vibrant_Gradient')) return 'Eye-catching colorful gradient theme tailored for design and digital creative studios.';
+  if (fileName.includes('Wave_Blue')) return 'Fluid corporate wave motif with high-contrast information hierarchy.';
+  return defaultDesc;
 }
 
 /**
@@ -107,6 +148,8 @@ export function getStudioWorks(): { works: WorkItem[]; tabs: CategoryTab[] } {
 
       const title = formatTitle(file);
       const pdfUrl = `/Web Site Data/${encodeURIComponent(folderName)}/${encodeURIComponent(file)}`;
+      const dimensions = getDimensions(folderName, file);
+      const description = getDescription(folderName, file, config.defaultDesc);
 
       works.push({
         id: `${config.id}-${file.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`,
@@ -116,15 +159,15 @@ export function getStudioWorks(): { works: WorkItem[]; tabs: CategoryTab[] } {
         folderName: folderName,
         fileName: file,
         pdfUrl: pdfUrl,
-        description: config.defaultDesc,
+        description: description,
         badgeClass: config.badgeClass,
         accentColor: config.accentColor,
-        dimensions: folderName === 'BussinesCard' ? '3.5" × 2.0"' : undefined
+        dimensions: dimensions
       });
     }
   }
 
-  // Sort works so newest or alphabetically ordered
+  // Sort works alphabetically by title
   works.sort((a, b) => a.title.localeCompare(b.title));
 
   // Build dynamic category tabs
