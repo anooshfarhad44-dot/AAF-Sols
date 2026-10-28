@@ -13,6 +13,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 import type { WorkItem, CategoryTab } from '@/lib/getStudioWorks';
+import PdfThumbnail from '../ui/PdfThumbnail';
 
 interface PortfolioShowcaseProps {
   initialWorks?: WorkItem[];
@@ -133,12 +134,11 @@ const PortfolioShowcase = ({ initialWorks = [], initialTabs = [] }: PortfolioSho
                 onClick={() => setSelectedPdf(item)}
                 className="relative h-64 w-full overflow-hidden bg-stone-100 cursor-pointer border-b border-stone-100 group/frame"
               >
-                {/* Embedded PDF Thumbnail Viewer */}
-                <iframe
-                  src={`${item.pdfUrl}#toolbar=0&navpanes=0&scrollbar=0&view=Fit`}
+                {/* High-Res HTML5 Canvas Vector PDF Thumbnail (Mobile & Desktop) */}
+                <PdfThumbnail
+                  pdfUrl={item.pdfUrl}
                   title={item.title}
-                  className="w-full h-full pointer-events-none scale-100 transform origin-top transition-transform duration-500 group-hover:scale-[1.03]"
-                  loading="lazy"
+                  categoryLabel={item.categoryLabel}
                 />
 
                 {/* Subtle gradient vignette */}
@@ -337,11 +337,43 @@ const PortfolioShowcase = ({ initialWorks = [], initialTabs = [] }: PortfolioSho
             </div>
 
             {/* Modal Body / PDF Frame */}
-            <div className="flex-1 w-full h-full bg-stone-100 relative">
+            <div className="flex-1 w-full h-full bg-stone-100 relative flex flex-col overflow-hidden">
+              {/* Mobile View: High-res Canvas + Quick action to phone reader */}
+              <div className="md:hidden flex-1 flex flex-col p-4 overflow-y-auto">
+                <div className="w-full flex-1 min-h-[340px] rounded-2xl overflow-hidden shadow-md border border-stone-200 bg-white">
+                  <PdfThumbnail
+                    pdfUrl={selectedPdf.pdfUrl}
+                    title={selectedPdf.title}
+                    categoryLabel={selectedPdf.categoryLabel}
+                  />
+                </div>
+
+                <div className="pt-4 space-y-2.5">
+                  <a
+                    href={selectedPdf.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-500/25 active:scale-95 transition-transform text-center"
+                  >
+                    <ExternalLink size={18} />
+                    <span>Open in Mobile Fullscreen (Pinch &amp; Zoom)</span>
+                  </a>
+                  <a
+                    href={selectedPdf.pdfUrl}
+                    download={selectedPdf.fileName}
+                    className="w-full py-2.5 px-4 rounded-xl bg-stone-200 text-stone-800 font-bold text-xs flex items-center justify-center gap-2"
+                  >
+                    <Download size={15} />
+                    <span>Download Original PDF File</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Desktop / Large Screen View: Full interactive iframe */}
               <iframe
                 src={`${selectedPdf.pdfUrl}#view=Fit`}
                 title={selectedPdf.title}
-                className="w-full h-full border-0"
+                className="hidden md:block w-full h-full border-0"
               />
             </div>
           </div>
