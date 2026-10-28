@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -11,6 +12,13 @@
   --surface-muted: #f5f5f4;
   --border: #e7e5e4;
   --text-muted: #78716c;
+}
+
+/* Nastaliq Urdu font utility */
+.urdu-nastaliq {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  line-height: 2.2;
+  letter-spacing: 0;
 }
 
 @theme inline {

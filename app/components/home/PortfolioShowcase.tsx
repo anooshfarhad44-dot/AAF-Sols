@@ -56,7 +56,7 @@ const PortfolioShowcase = ({ initialWorks = [], initialTabs = [] }: PortfolioSho
     : works.filter(p => p.category === activeFilter);
 
   return (
-    <section id="our-work" className="py-24 bg-stone-50 text-stone-900 relative overflow-hidden border-t border-stone-200/80">
+    <section id="our-work" className="scroll-mt-24 py-24 bg-stone-50 text-stone-900 relative overflow-hidden border-t border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Section Header */}

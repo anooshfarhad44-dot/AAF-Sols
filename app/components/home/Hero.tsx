@@ -3,7 +3,7 @@ import { motion, AnimatePresence, type Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Sparkles, ArrowRight, Printer, Palette, Zap, ChevronLeft, ChevronRight } from "lucide-react";
+import { Sparkles, ArrowRight, Printer, Palette, Zap, ChevronLeft, ChevronRight, CheckCircle2, Eye } from "lucide-react";
 
 const heroSlides = [
   {
@@ -29,9 +29,25 @@ const heroSlides = [
   },
 ];
 
+const highlights = {
+  en: [
+    { color: "bg-amber-500",  text: "Same Day Design Ready — Order before 2 PM", num: null },
+    { color: "bg-orange-500", text: "We Can Visit You & Design On-Site (Islamabad / Rwp)", num: null },
+    { color: "bg-violet-500", text: "Fast Turnaround — Prints Ready Within Hours", num: null },
+    { color: "bg-green-500",  text: "WhatsApp Us Anytime: ", num: "0348 5152978" },
+  ],
+  ur: [
+    { color: "bg-amber-500",  text: "آج ہی ڈیزائن تیار — دوپہر 2 بجے سے پہلے آرڈر کریں", num: null },
+    { color: "bg-orange-500", text: "ہم آپ کے پاس آ کر ڈیزائن کریں گے (اسلام آباد / راولپنڈی)", num: null },
+    { color: "bg-violet-500", text: "تیز ترین ڈیلیوری — گھنٹوں میں پرنٹ تیار", num: null },
+    { color: "bg-green-500",  text: "واٹس ایپ کریں: ", num: "0348 5152978" },
+  ],
+};
+
 const Hero = () => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [lang, setLang] = useState<"en" | "ur">("en");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -76,10 +92,23 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="lg:col-span-6 space-y-6 text-left"
         >
-          {/* Studio Tag */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/90 border border-amber-200 text-amber-800 text-xs font-semibold tracking-wide shadow-sm">
-            <Sparkles size={14} className="text-amber-600" />
-            <span>AA GRAPHIC STUDIO &bull; YOUR VISION, OUR CREATION</span>
+          {/* Studio Tag / Quick Portfolio Pill */}
+          <div className="flex flex-wrap items-center gap-2.5">
+            <a
+              href="#our-work"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("our-work")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-amber-100 via-orange-100 to-amber-100 hover:from-amber-200 hover:to-orange-200 border border-amber-300 text-amber-900 text-xs font-bold tracking-wide shadow-sm transition-all hover:scale-[1.02] cursor-pointer"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
+              </span>
+              <span>AA GRAPHIC STUDIO &bull; 500+ VERIFIED WORKS</span>
+              <ArrowRight size={13} className="text-amber-700 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
 
           {/* Main Title */}
@@ -96,23 +125,120 @@ const Hero = () => {
             From iconic brand logos and social media campaigns to premium packaging and luxury offset printing — we bring your vision to life with pixel-perfect precision.
           </p>
 
-          {/* Primary CTA Buttons */}
-          <div className="flex flex-wrap gap-4 pt-2">
+          {/* 🔥 Showstopper Primary CTA Buttons (Directly Below Title & Description) */}
+          <div className="flex flex-wrap items-center gap-3.5 pt-1">
+            {/* Main "Our Work" CTA */}
+            <a
+              href="#our-work"
+              id="hero-our-work-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("our-work")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="group relative inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full font-extrabold text-sm sm:text-base text-white bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-400 hover:via-orange-500 hover:to-amber-500 shadow-[0_8px_30px_rgba(245,158,11,0.45)] hover:shadow-[0_12px_40px_rgba(245,158,11,0.65)] transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 cursor-pointer overflow-hidden border border-amber-300/50"
+            >
+              {/* Shimmer light sweep across button */}
+              <span className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none" />
+
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20 text-white">
+                <Eye size={16} />
+              </span>
+
+              <span className="tracking-wide">Explore Our Work</span>
+
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/20 group-hover:bg-white text-white group-hover:text-amber-600 transition-all duration-300 group-hover:translate-x-1">
+                <ArrowRight size={14} />
+              </span>
+            </a>
+
+            {/* Secondary CTA */}
             <Link
               href="/contactUs"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-bold text-sm bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white shadow-[0_6px_24px_rgba(217,119,6,0.30)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm bg-white hover:bg-stone-50 border border-stone-300 hover:border-amber-400 text-stone-800 shadow-sm transition-all transform hover:-translate-y-0.5 active:translate-y-0"
             >
+              <Sparkles size={15} className="text-amber-600" />
               <span>Get Free Quote</span>
-              <ArrowRight size={16} />
             </Link>
 
+            {/* Services Link */}
             <Link
               href="/services"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full font-semibold text-sm border border-stone-300 bg-white hover:bg-stone-50 hover:border-stone-400 text-stone-700 transition-all hover:-translate-y-0.5 shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full font-semibold text-xs sm:text-sm text-stone-600 hover:text-amber-600 transition-colors"
             >
-              <span>Explore Our Services</span>
+              <span>Our Services</span>
+              <ArrowRight size={13} />
             </Link>
           </div>
+
+          {/* ✅ Highlights Card with EN / UR toggle */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="max-w-xl rounded-2xl border border-stone-200 bg-white/80 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.07)] overflow-hidden"
+          >
+            {/* Card header with toggle */}
+            <div className="flex items-center justify-between px-4 py-2.5 border-b border-stone-100 bg-stone-50/80">
+              <span className="text-[11px] font-bold text-stone-500 uppercase tracking-widest">
+                {lang === "en" ? "Why Choose Us" : "ہمیں کیوں چنیں"}
+              </span>
+              {/* Language toggle */}
+              <div className="flex items-center gap-1 bg-stone-200/70 rounded-full p-0.5">
+                <button
+                  onClick={() => setLang("en")}
+                  className={`px-3 py-1 rounded-full text-[11px] font-bold transition-all duration-200 ${
+                    lang === "en"
+                      ? "bg-white text-amber-700 shadow-sm"
+                      : "text-stone-500 hover:text-stone-700"
+                  }`}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => setLang("ur")}
+                  className={`px-3 py-1 rounded-full text-[11px] font-bold transition-all duration-200 ${
+                    lang === "ur"
+                      ? "bg-white text-amber-700 shadow-sm"
+                      : "text-stone-500 hover:text-stone-700"
+                  }`}
+                >
+                  اردو
+                </button>
+              </div>
+            </div>
+
+            {/* List content — animated on language switch */}
+            <AnimatePresence mode="wait">
+              <motion.ul
+                key={lang}
+                initial={{ opacity: 0, x: lang === "ur" ? 12 : -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: lang === "ur" ? -12 : 12 }}
+                transition={{ duration: 0.3 }}
+                className={`px-4 py-3 space-y-3 ${
+                  lang === "ur" ? "text-right urdu-nastaliq" : "text-left"
+                }`}
+                dir={lang === "ur" ? "rtl" : "ltr"}
+              >
+                {highlights[lang].map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center gap-3 text-sm text-stone-700 font-medium"
+                  >
+                    <span className={`flex-shrink-0 w-2 h-2 rounded-full ${item.color}`} />
+                    <span className={lang === "ur" ? "text-[15px]" : ""}>
+                      {item.text}
+                      {item.num && (
+                        <span dir="ltr" style={{ unicodeBidi: "isolate" }}>
+                          {item.num}
+                        </span>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </motion.ul>
+            </AnimatePresence>
+          </motion.div>
 
           {/* Trust Badges */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-stone-200 max-w-xl">
