@@ -110,6 +110,7 @@ const Navbar = () => {
     { name: 'Our Work', href: '/#our-work' },
     { name: 'Services', href: '/services' },
     { name: 'About Studio', href: '/aboutUs' },
+    { name: 'Fancy Boxes', href: '/fancy-boxes' },
     { name: 'Contact & Quote', href: '/contactUs' },
   ];
 

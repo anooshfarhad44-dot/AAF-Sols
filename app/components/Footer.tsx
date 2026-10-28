@@ -64,10 +64,16 @@ const Footer = () => {
               Printing Press
             </h3>
             <ul className="space-y-2.5 text-sm">
-              {["Luxury Business Cards & Stationery", "Flex & Large Format Banners", "Custom Apparel & Merch Printing", "Rigid Boxes & Packaging Print", "Spot UV & Gold Foil Stamping"].map((item, i) => (
+              {[
+                { name: "Luxury Business Cards & Stationery", href: "/services" },
+                { name: "Flex & Large Format Banners", href: "/services" },
+                { name: "Custom Apparel & Merch Printing", href: "/services" },
+                { name: "Rigid Boxes & Fancy Packaging", href: "/fancy-boxes" },
+                { name: "Spot UV & Gold Foil Stamping", href: "/services" },
+              ].map((item, i) => (
                 <li key={i}>
-                  <Link href="/services" className="hover:text-amber-400 transition-colors">
-                    {item}
+                  <Link href={item.href} className="hover:text-amber-400 transition-colors">
+                    {item.name}
                   </Link>
                 </li>
               ))}
