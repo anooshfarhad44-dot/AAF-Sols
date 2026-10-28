@@ -26,7 +26,7 @@ export default function WorkCTABanner() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-r from-stone-950 via-[#181109] to-stone-950 border-b border-amber-500/25 text-white z-20">
+    <div className="relative w-full overflow-hidden bg-stone-950 bg-gradient-to-r from-stone-950 via-[#181109] to-stone-950 border-b border-amber-500/25 text-white z-20">
       {/* Animated shimmer line at top */}
       <motion.div
         className="absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r from-transparent via-amber-400 to-transparent pointer-events-none"
@@ -46,16 +46,16 @@ export default function WorkCTABanner() {
         <div className="absolute top-[-50%] right-[15%] w-[30%] h-[200%] bg-orange-500/15 blur-[60px] rounded-full" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-3">
+      <div className="relative z-10 max-w-7xl mx-auto px-2.5 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-3">
 
-        {/* Left: Ticker & Live Portfolio Pill */}
-        <div className="flex items-center gap-3 overflow-hidden flex-1 min-w-0">
+        {/* Left: Ticker & Live Portfolio Pill (Only visible on md+ tablet & desktop screens) */}
+        <div className="hidden md:flex items-center gap-3 overflow-hidden flex-1 min-w-0">
           <div className="flex-shrink-0 flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/40">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
             </span>
-            <span className="text-amber-300 text-[10px] sm:text-[11px] font-extrabold tracking-widest uppercase whitespace-nowrap">
+            <span className="text-amber-300 text-[11px] font-extrabold tracking-widest uppercase whitespace-nowrap">
               LIVE PORTFOLIO
             </span>
           </div>
@@ -79,16 +79,16 @@ export default function WorkCTABanner() {
           </div>
         </div>
 
-        {/* Right: CTA Actions (Call + WhatsApp + See Our Work) */}
-        <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
+        {/* CTA Actions: Call + WhatsApp + See Our Work (Full width on mobile, right-aligned on desktop) */}
+        <div className="w-full md:w-auto flex items-center justify-between sm:justify-end gap-1.5 sm:gap-2.5 flex-nowrap">
 
           {/* Call CTA */}
           <a
             href="tel:+923099634495"
-            className="group inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full font-bold text-xs bg-stone-900/90 hover:bg-stone-800 text-stone-200 border border-stone-700/80 hover:border-amber-500/50 transition-all hover:scale-105 active:scale-95 shadow-sm"
+            className="flex-1 sm:flex-none justify-center inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-full font-bold text-xs bg-stone-900/90 hover:bg-stone-800 text-stone-200 border border-stone-700/80 hover:border-amber-500/50 transition-all hover:scale-105 active:scale-95 shadow-sm whitespace-nowrap"
             title="Call AA Graphic Studio: 0309 9634495"
           >
-            <span className="flex items-center justify-center w-4 h-4 rounded-full bg-amber-500/20 text-amber-400 group-hover:text-amber-300">
+            <span className="flex items-center justify-center w-4 h-4 rounded-full bg-amber-500/20 text-amber-400 flex-shrink-0">
               <Phone size={11} />
             </span>
             <span>Call</span>
@@ -100,10 +100,10 @@ export default function WorkCTABanner() {
             href="https://wa.me/923485152978?text=Hello%20AA%20Graphic%20Studio%2C%20I%20am%20interested%20in%20your%20design%20and%20printing%20services"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full font-bold text-xs bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_16px_rgba(16,185,129,0.40)] hover:shadow-[0_0_22px_rgba(16,185,129,0.60)] transition-all hover:scale-105 active:scale-95 border border-emerald-400/40"
+            className="flex-1 sm:flex-none justify-center inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-full font-bold text-xs bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_16px_rgba(16,185,129,0.40)] hover:shadow-[0_0_22px_rgba(16,185,129,0.60)] transition-all hover:scale-105 active:scale-95 border border-emerald-400/40 whitespace-nowrap"
             title="WhatsApp AA Graphic Studio: 0348 5152978"
           >
-            <span className="flex items-center justify-center w-4 h-4 rounded-full bg-white/20 text-white">
+            <span className="flex items-center justify-center w-4 h-4 rounded-full bg-white/20 text-white flex-shrink-0">
               <MessageCircle size={11} className="fill-white/30" />
             </span>
             <span>WhatsApp</span>
@@ -112,6 +112,7 @@ export default function WorkCTABanner() {
 
           {/* See Our Work CTA */}
           <motion.div
+            className="flex-[1.2] sm:flex-none"
             animate={{ scale: [1, 1.025, 1] }}
             transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -119,21 +120,21 @@ export default function WorkCTABanner() {
               href="#our-work"
               id="see-our-work-cta"
               onClick={scrollToWork}
-              className="group relative inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full font-extrabold text-xs sm:text-sm text-white bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-400 hover:via-orange-500 hover:to-amber-500 shadow-[0_0_24px_rgba(245,158,11,0.50)] hover:shadow-[0_0_32px_rgba(245,158,11,0.75)] transition-all transform hover:scale-105 active:scale-95 cursor-pointer overflow-hidden border border-amber-300/40"
+              className="w-full sm:w-auto justify-center group relative inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-1.5 sm:py-2 rounded-full font-extrabold text-xs sm:text-sm text-white bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-400 hover:via-orange-500 hover:to-amber-500 shadow-[0_0_24px_rgba(245,158,11,0.50)] hover:shadow-[0_0_32px_rgba(245,158,11,0.75)] transition-all hover:scale-105 active:scale-95 cursor-pointer overflow-hidden border border-amber-300/40 whitespace-nowrap"
             >
               {/* Moving shine sweep across button */}
               <span className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none" />
 
-              <span className="flex items-center justify-center w-4 h-4 rounded-full bg-white/20">
+              <span className="flex items-center justify-center w-4 h-4 rounded-full bg-white/20 flex-shrink-0">
                 <Eye size={12} className="text-white" />
               </span>
 
-              <span className="tracking-wide">See Our Work</span>
+              <span className="tracking-wide whitespace-nowrap">See Our Work</span>
 
               <motion.span
                 animate={{ x: [0, 3, 0] }}
                 transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
-                className="flex items-center"
+                className="flex items-center flex-shrink-0"
               >
                 <ArrowRight size={13} className="text-white" />
               </motion.span>
