@@ -49,6 +49,13 @@ const PortfolioShowcase = ({ initialWorks = [], initialTabs = [] }: PortfolioSho
   useEffect(() => {
     // If no initialWorks provided or to ensure freshest list on client
     refreshWorks();
+
+    if (typeof window !== 'undefined' && window.location.hash === '#our-work') {
+      const timer = setTimeout(() => {
+        document.getElementById('our-work')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 250);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const filteredProjects = activeFilter === 'all'

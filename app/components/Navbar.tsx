@@ -20,11 +20,80 @@ const Navbar = () => {
     }
   }, [pathname]);
 
+  const [isOurWorkActive, setIsOurWorkActive] = useState(false);
+
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+
+      if (pathname === '/') {
+        const ourWork = document.getElementById('our-work');
+        if (ourWork) {
+          const rect = ourWork.getBoundingClientRect();
+          // Active when our-work section is near or in view
+          const inView = rect.top <= 250 && rect.bottom >= 150;
+          setIsOurWorkActive(inView);
+        } else {
+          setIsOurWorkActive(false);
+        }
+      } else {
+        setIsOurWorkActive(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
+
+  // Handle URL hash on initial load or route transition (e.g. from another page)
+  useEffect(() => {
+    const checkAndScroll = () => {
+      if (typeof window !== 'undefined' && window.location.hash === '#our-work') {
+        const timer = setTimeout(() => {
+          const elem = document.getElementById('our-work');
+          if (elem) {
+            elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setIsOurWorkActive(true);
+          }
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    };
+
+    checkAndScroll();
+    window.addEventListener('hashchange', checkAndScroll);
+    return () => window.removeEventListener('hashchange', checkAndScroll);
+  }, [pathname]);
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setIsOpen(false);
+
+    if (href.includes('#our-work')) {
+      e.preventDefault();
+      if (pathname === '/') {
+        const elem = document.getElementById('our-work');
+        if (elem) {
+          elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.history.pushState(null, '', '/#our-work');
+          setIsOurWorkActive(true);
+        }
+      } else {
+        router.push('/#our-work');
+      }
+      return;
+    }
+
+    if (href === '/') {
+      if (pathname === '/') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.history.pushState(null, '', '/');
+        setIsOurWorkActive(false);
+      }
+      return;
+    }
+  };
 
   const handleLogout = async () => {
     try {
@@ -99,13 +168,17 @@ const Navbar = () => {
         <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isOpen ? 'block' : 'hidden'}`}>
           <ul className="flex flex-col p-4 md:p-0 mt-4 md:mt-0 font-medium border border-stone-200 rounded-2xl bg-white/98 md:bg-transparent md:space-x-2 md:flex-row md:border-0 shadow-xl md:shadow-none">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isOurWorkLink = link.href.includes('#our-work');
+              const isActive = isOurWorkLink
+                ? isOurWorkActive
+                : pathname === link.href && !isOurWorkActive;
+
               return (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`block py-2 px-3.5 rounded-xl text-sm transition-all duration-200 ${
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className={`block py-2 px-3.5 rounded-xl text-sm transition-all duration-200 cursor-pointer ${
                       isActive
                         ? 'text-amber-700 bg-amber-50 font-semibold md:bg-transparent md:text-amber-700 md:font-bold md:border-b-2 md:border-amber-500 md:rounded-none'
                         : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100 md:hover:bg-transparent md:hover:text-amber-700'
