@@ -21,6 +21,12 @@
   letter-spacing: 0;
 }
 
+.urdu-nastaliq-tight {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

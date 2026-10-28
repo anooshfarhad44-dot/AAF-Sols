@@ -179,7 +179,13 @@ const Hero = () => {
           >
             {/* Card header with toggle */}
             <div className="flex items-center justify-between px-4 py-2.5 border-b border-stone-100 bg-stone-50/80">
-              <span className="text-[11px] font-bold text-stone-500 uppercase tracking-widest">
+              <span
+                className={`transition-all ${
+                  lang === "ur"
+                    ? "urdu-nastaliq-tight text-sm font-bold text-stone-700"
+                    : "text-[11px] font-bold text-stone-500 uppercase tracking-widest"
+                }`}
+              >
                 {lang === "en" ? "Why Choose Us" : "ہمیں کیوں چنیں"}
               </span>
               {/* Language toggle */}
@@ -196,7 +202,7 @@ const Hero = () => {
                 </button>
                 <button
                   onClick={() => setLang("ur")}
-                  className={`px-3 py-1 rounded-full text-[11px] font-bold transition-all duration-200 ${
+                  className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-200 urdu-nastaliq-tight ${
                     lang === "ur"
                       ? "bg-white text-amber-700 shadow-sm"
                       : "text-stone-500 hover:text-stone-700"

@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Eye, ArrowRight, Star } from "lucide-react";
+import { Eye, ArrowRight, Star, Phone, MessageCircle } from "lucide-react";
 
 const marqueeItems = [
   "Custom Vector Logos",
@@ -46,7 +46,7 @@ export default function WorkCTABanner() {
         <div className="absolute top-[-50%] right-[15%] w-[30%] h-[200%] bg-orange-500/15 blur-[60px] rounded-full" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-3">
+      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-3">
 
         {/* Left: Ticker & Live Portfolio Pill */}
         <div className="flex items-center gap-3 overflow-hidden flex-1 min-w-0">
@@ -55,13 +55,13 @@ export default function WorkCTABanner() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
             </span>
-            <span className="text-amber-300 text-[11px] font-extrabold tracking-widest uppercase whitespace-nowrap">
+            <span className="text-amber-300 text-[10px] sm:text-[11px] font-extrabold tracking-widest uppercase whitespace-nowrap">
               LIVE PORTFOLIO
             </span>
           </div>
 
           {/* Ticker marquee */}
-          <div className="relative overflow-hidden flex-1 min-w-0 hidden md:block">
+          <div className="relative overflow-hidden flex-1 min-w-0 hidden lg:block">
             <div className="absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-stone-950 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-stone-950 to-transparent z-10 pointer-events-none" />
             <motion.div
@@ -79,40 +79,68 @@ export default function WorkCTABanner() {
           </div>
         </div>
 
-        {/* Right: Jaw-dropping CTA Button */}
-        <motion.div
-          className="flex-shrink-0"
-          animate={{
-            scale: [1, 1.03, 1],
-          }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-        >
+        {/* Right: CTA Actions (Call + WhatsApp + See Our Work) */}
+        <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
+
+          {/* Call CTA */}
           <a
-            href="#our-work"
-            id="see-our-work-cta"
-            onClick={scrollToWork}
-            className="group relative inline-flex items-center gap-2.5 px-5 sm:px-6 py-2 rounded-full font-extrabold text-xs sm:text-sm text-white bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-400 hover:via-orange-500 hover:to-amber-500 shadow-[0_0_24px_rgba(245,158,11,0.50)] hover:shadow-[0_0_32px_rgba(245,158,11,0.75)] transition-all transform hover:scale-105 active:scale-95 cursor-pointer overflow-hidden border border-amber-300/40"
+            href="tel:+923099634495"
+            className="group inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full font-bold text-xs bg-stone-900/90 hover:bg-stone-800 text-stone-200 border border-stone-700/80 hover:border-amber-500/50 transition-all hover:scale-105 active:scale-95 shadow-sm"
+            title="Call AA Graphic Studio: 0309 9634495"
           >
-            {/* Moving shine sweep across button */}
-            <span className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out" />
-
-            <span className="flex items-center justify-center w-5 h-5 rounded-full bg-white/20">
-              <Eye size={13} className="text-white" />
+            <span className="flex items-center justify-center w-4 h-4 rounded-full bg-amber-500/20 text-amber-400 group-hover:text-amber-300">
+              <Phone size={11} />
             </span>
-
-            <span className="tracking-wide">See Our Work</span>
-
-            
-
-            <motion.span
-              animate={{ x: [0, 4, 0] }}
-              transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
-              className="flex items-center"
-            >
-              <ArrowRight size={14} className="text-white" />
-            </motion.span>
+            <span>Call</span>
+            <span className="hidden xl:inline text-stone-400 text-[11px] font-normal">0309 9634495</span>
           </a>
-        </motion.div>
+
+          {/* WhatsApp CTA */}
+          <a
+            href="https://wa.me/923485152978?text=Hello%20AA%20Graphic%20Studio%2C%20I%20am%20interested%20in%20your%20design%20and%20printing%20services"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full font-bold text-xs bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_16px_rgba(16,185,129,0.40)] hover:shadow-[0_0_22px_rgba(16,185,129,0.60)] transition-all hover:scale-105 active:scale-95 border border-emerald-400/40"
+            title="WhatsApp AA Graphic Studio: 0348 5152978"
+          >
+            <span className="flex items-center justify-center w-4 h-4 rounded-full bg-white/20 text-white">
+              <MessageCircle size={11} className="fill-white/30" />
+            </span>
+            <span>WhatsApp</span>
+            <span className="hidden xl:inline text-emerald-100 text-[11px] font-normal">0348 5152978</span>
+          </a>
+
+          {/* See Our Work CTA */}
+          <motion.div
+            animate={{ scale: [1, 1.025, 1] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <a
+              href="#our-work"
+              id="see-our-work-cta"
+              onClick={scrollToWork}
+              className="group relative inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full font-extrabold text-xs sm:text-sm text-white bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-400 hover:via-orange-500 hover:to-amber-500 shadow-[0_0_24px_rgba(245,158,11,0.50)] hover:shadow-[0_0_32px_rgba(245,158,11,0.75)] transition-all transform hover:scale-105 active:scale-95 cursor-pointer overflow-hidden border border-amber-300/40"
+            >
+              {/* Moving shine sweep across button */}
+              <span className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none" />
+
+              <span className="flex items-center justify-center w-4 h-4 rounded-full bg-white/20">
+                <Eye size={12} className="text-white" />
+              </span>
+
+              <span className="tracking-wide">See Our Work</span>
+
+              <motion.span
+                animate={{ x: [0, 3, 0] }}
+                transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                className="flex items-center"
+              >
+                <ArrowRight size={13} className="text-white" />
+              </motion.span>
+            </a>
+          </motion.div>
+
+        </div>
       </div>
     </div>
   );
