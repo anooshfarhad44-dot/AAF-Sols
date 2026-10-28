@@ -123,6 +123,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} <span className="text-stone-300 font-semibold">AA Graphic Studio</span>. All Rights Reserved. Graphic Designing &amp; High-End Printing.
           </p>
           <div className="flex gap-6">
+            <Link href="/#our-work" className="hover:text-stone-300 transition-colors">Our Work</Link>
             <Link href="/services" className="hover:text-stone-300 transition-colors">Services</Link>
             <Link href="/aboutUs" className="hover:text-stone-300 transition-colors">About Us</Link>
             <Link href="/contactUs" className="hover:text-stone-300 transition-colors">Get a Quote</Link>

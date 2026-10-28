@@ -38,6 +38,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
+    { name: 'Our Work', href: '/#our-work' },
     { name: 'Services', href: '/services' },
     { name: 'About Studio', href: '/aboutUs' },
     { name: 'Contact & Quote', href: '/contactUs' },
