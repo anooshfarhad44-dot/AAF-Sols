@@ -21,7 +21,7 @@ const heroSlides = [
     subcaption: "Embossed Boxes · Hot Foil · Matte Lamination",
   },
   {
-    image: "/aa-studio-hero.jpg",
+    image: "/aa-studio-hero.PNG",
     tag: "AA Graphic Studio",
     tagColor: "bg-orange-100 text-orange-700 border-orange-200",
     caption: "Your Vision, Our Creation — Let's Create Together",

@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   title: "AA Graphic Studio | Creative Graphic Design & Luxury Printing",
   description: "AA Graphic Studio is your premier creative partner for world-class graphic designing, brand identity, packaging, and high-precision digital & offset printing solutions.",
   icons: {
-    icon: '/aa-studio-logo.jpg',
-    apple: '/aa-studio-logo.jpg',
+    icon: '/aa-icon.png',
+    apple: '/aa-icon.png',
   },
   keywords: [
     "AA Graphic Studio",

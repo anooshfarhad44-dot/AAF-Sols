@@ -25,9 +25,9 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-3">
-                    <div className="relative h-12 w-12">
+                    <div className="relative h-12 w-32">
                         <Image
-                            src="/aaf-logo.png"
+                            src="/aa-logoNew.png"
                             alt="AAF Solutions"
                             fill
                             className="object-contain"

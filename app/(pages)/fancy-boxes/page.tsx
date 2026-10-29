@@ -63,28 +63,25 @@ export default function FancyBoxesPage() {
     <div className="bg-[#fafaf9] min-h-screen text-stone-900 pb-24">
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-stone-900 via-[#1a1208] to-stone-900 text-white pt-12 pb-20 border-b border-amber-500/20">
-        {/* Shimmer sweep */}
-        <div className="absolute inset-0 pointer-events-none opacity-20">
-          <div className="absolute top-[-30%] left-[10%] w-[40%] h-[160%] bg-amber-500/30 blur-[100px] rounded-full" />
-          <div className="absolute bottom-[-20%] right-[10%] w-[45%] h-[150%] bg-orange-500/25 blur-[120px] rounded-full" />
-        </div>
+      <section className="relative overflow-hidden bg-gradient-to-b from-amber-50/60 via-white to-[#fafaf9] text-stone-900 pt-14 pb-16 border-b border-stone-200/80">
+        {/* Soft background ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-amber-400/10 blur-[130px] rounded-full pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 text-xs font-bold tracking-widest uppercase">
-            <Sparkles size={14} className="text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-amber-300 text-amber-800 text-xs font-bold tracking-widest uppercase shadow-sm">
+            <Sparkles size={14} className="text-amber-600" />
             <span>LUXURY PACKAGING &bull; RIGID BOX PRESS</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white max-w-4xl mx-auto leading-[1.1]">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-stone-900 max-w-4xl mx-auto leading-[1.15]">
             Custom Printed{" "}
-            <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-700 bg-clip-text text-transparent">
               Fancy Boxes
             </span>{" "}
             &amp; Rigid Packaging
           </h1>
 
-          <p className="text-stone-300 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-stone-600 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
             High-precision luxury rigid boxes, magnetic closure gift packs, perfume cartons, and gold foil sweet boxes. Handcrafted with heavy kappa board and millimeter-accurate dies.
           </p>
 
@@ -94,7 +91,7 @@ export default function FancyBoxesPage() {
               href="https://wa.me/923485152978?text=Hello%20AA%20Graphic%20Studio%2C%20I%20want%20to%20order%20Custom%20Fancy%20Boxes"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-extrabold text-sm text-white bg-emerald-600 hover:bg-emerald-500 shadow-[0_0_24px_rgba(16,185,129,0.40)] transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-extrabold text-sm text-white bg-emerald-600 hover:bg-emerald-500 shadow-md shadow-emerald-600/20 transition-all hover:scale-105 active:scale-95"
             >
               <MessageCircle size={16} />
               <span>Order on WhatsApp (0348 5152978)</span>
@@ -102,7 +99,7 @@ export default function FancyBoxesPage() {
 
             <Link
               href="/contactUs"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white shadow-[0_4px_20px_rgba(245,158,11,0.3)] transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white shadow-md shadow-amber-500/25 transition-all hover:scale-105"
             >
               <Sparkles size={15} />
               <span>Get Custom Box Quote</span>
@@ -111,31 +108,31 @@ export default function FancyBoxesPage() {
             <button
               onClick={fetchItems}
               disabled={isRefreshing}
-              className="inline-flex items-center gap-2 px-4 py-3 rounded-full font-semibold text-xs text-stone-300 bg-white/10 hover:bg-white/15 border border-white/20 transition-all hover:text-white"
+              className="inline-flex items-center gap-2 px-4 py-3 rounded-full font-semibold text-xs text-stone-700 bg-white hover:bg-stone-50 border border-stone-200 shadow-sm transition-all hover:text-stone-900"
               title="Refresh files from folder"
             >
-              <RotateCw size={14} className={isRefreshing ? "animate-spin text-amber-400" : ""} />
+              <RotateCw size={14} className={isRefreshing ? "animate-spin text-amber-600" : ""} />
               <span>{isRefreshing ? "Scanning..." : "Live Refresh"}</span>
             </button>
           </div>
 
           {/* Packaging Features Bar */}
-          <div className="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto text-left">
-            <div className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <p className="text-[11px] text-amber-400 uppercase font-mono font-bold">Rigid Board</p>
-              <p className="text-sm font-bold text-white">1000 &ndash; 1800 GSM</p>
+          <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto text-left">
+            <div className="p-3.5 rounded-2xl bg-white border border-stone-200/90 shadow-sm">
+              <p className="text-[11px] text-amber-700 uppercase font-mono font-bold">Rigid Board</p>
+              <p className="text-sm font-bold text-stone-900">1000 &ndash; 1800 GSM</p>
             </div>
-            <div className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <p className="text-[11px] text-orange-400 uppercase font-mono font-bold">Foil Stamping</p>
-              <p className="text-sm font-bold text-white">Gold, Silver, Copper</p>
+            <div className="p-3.5 rounded-2xl bg-white border border-stone-200/90 shadow-sm">
+              <p className="text-[11px] text-orange-700 uppercase font-mono font-bold">Foil Stamping</p>
+              <p className="text-sm font-bold text-stone-900">Gold, Silver, Copper</p>
             </div>
-            <div className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <p className="text-[11px] text-violet-400 uppercase font-mono font-bold">Lamination</p>
-              <p className="text-sm font-bold text-white">Soft-Touch &amp; Spot UV</p>
+            <div className="p-3.5 rounded-2xl bg-white border border-stone-200/90 shadow-sm">
+              <p className="text-[11px] text-purple-700 uppercase font-mono font-bold">Lamination</p>
+              <p className="text-sm font-bold text-stone-900">Soft-Touch &amp; Spot UV</p>
             </div>
-            <div className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <p className="text-[11px] text-emerald-400 uppercase font-mono font-bold">Delivery</p>
-              <p className="text-sm font-bold text-white">Nationwide Shipping</p>
+            <div className="p-3.5 rounded-2xl bg-white border border-stone-200/90 shadow-sm">
+              <p className="text-[11px] text-emerald-700 uppercase font-mono font-bold">Delivery</p>
+              <p className="text-sm font-bold text-stone-900">Nationwide Shipping</p>
             </div>
           </div>
         </div>
@@ -190,7 +187,7 @@ export default function FancyBoxesPage() {
             <Package size={18} className="text-amber-600 flex-shrink-0" />
             <span>
               <strong>Studio Live Directory:</strong> Apne print kiye hue Fancy Boxes ki photos (<code>.jpg</code>, <code>.png</code>) ya vector design files (<code>.pdf</code>) 
-              folder <code>/public/Web Site Data/FancyBoxes</code> mein add karein, wo foran yahan live show hongi!
+              folder <code>/public/Fancy_Boxes</code> mein add karein, wo foran yahan live show hongi!
             </span>
           </div>
           <button
@@ -240,11 +237,12 @@ export default function FancyBoxesPage() {
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-full relative overflow-hidden bg-stone-900">
+                  <div className="w-full h-full relative overflow-hidden bg-gradient-to-b from-[#fbfaf8] to-[#f2efea] flex items-center justify-center p-3">
                     <img
                       src={item.fileUrl}
                       alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-md"
+                      loading="lazy"
                     />
                   </div>
                 )}
@@ -365,11 +363,13 @@ export default function FancyBoxesPage() {
                   />
                 </div>
               ) : (
-                <img
-                  src={previewItem.fileUrl}
-                  alt={previewItem.title}
-                  className="max-h-[85vh] w-full object-contain p-4"
-                />
+                <div className="w-full h-full p-4 flex items-center justify-center bg-stone-950">
+                  <img
+                    src={previewItem.fileUrl}
+                    alt={previewItem.title}
+                    className="max-h-[80vh] w-auto max-w-full object-contain rounded-xl drop-shadow-2xl"
+                  />
+                </div>
               )}
             </div>
 

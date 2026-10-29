@@ -4,47 +4,38 @@ import Image from 'next/image';
 interface StudioLogoProps {
   size?: 'sm' | 'md' | 'lg';
   showSubtitle?: boolean;
+  className?: string;
 }
 
 export const StudioLogo: React.FC<StudioLogoProps> = ({ 
   size = 'md',
-  showSubtitle = true 
+  className = ''
 }) => {
-  const imgSizes = {
-    sm: { w: 38, h: 38, text: 'text-lg', sub: 'text-[9px]' },
-    md: { w: 46, h: 46, text: 'text-xl', sub: 'text-[10px]' },
-    lg: { w: 60, h: 60, text: 'text-2xl', sub: 'text-xs' }
+  const sizeClasses = {
+    sm: 'h-8 sm:h-9',
+    md: 'h-10 sm:h-12',
+    lg: 'h-14 sm:h-16'
+  }[size];
+
+  const dimensions = {
+    sm: { w: 100, h: 40 },
+    md: { w: 140, h: 56 },
+    lg: { w: 180, h: 72 }
   }[size];
 
   return (
-    <div className="flex items-center gap-3 select-none">
-      <div className="relative rounded-xl overflow-hidden shadow-[0_2px_12px_rgba(217,119,6,0.18)] border border-amber-200 group-hover:border-amber-400 transition-colors">
-        <Image
-          src="/aa-studio-logo.jpg"
-          alt="AA Graphic Studio Logo"
-          width={imgSizes.w}
-          height={imgSizes.h}
-          className="object-cover"
-          priority
-        />
-      </div>
-      <div className="flex flex-col leading-tight">
-        <div className="flex items-center gap-1.5">
-          <span className={`font-black tracking-tight text-stone-900 ${imgSizes.text}`}>
-            AA <span className="bg-gradient-to-r from-amber-600 to-orange-500 bg-clip-text text-transparent">GRAPHIC</span>
-          </span>
-          <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-100 text-amber-700 border border-amber-200 font-bold hidden sm:inline-block">
-            STUDIO
-          </span>
-        </div>
-        {showSubtitle && (
-          <span className={`text-stone-500 font-medium tracking-widest uppercase ${imgSizes.sub}`}>
-            Design &bull; Print &bull; Branding
-          </span>
-        )}
-      </div>
+    <div className={`flex items-center select-none ${className}`}>
+      <Image
+        src="/aa-logoNew.png"
+        alt="AA Graphic Studio Logo"
+        width={dimensions.w}
+        height={dimensions.h}
+        className={`${sizeClasses} w-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]`}
+        priority
+      />
     </div>
   );
 };
 
 export default StudioLogo;
+

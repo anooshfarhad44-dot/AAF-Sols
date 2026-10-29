@@ -14,14 +14,9 @@ const Footer = () => {
           {/* Brand info */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-block group">
-              <div className="flex items-center gap-3 select-none">
-                <div className="relative rounded-xl overflow-hidden border border-amber-500/30 shadow-[0_0_16px_rgba(217,119,6,0.2)]">
-                  <img src="/aa-studio-logo.jpg" alt="AA Graphic Studio" width={46} height={46} className="object-cover" />
-                </div>
-                <div>
-                  <p className="font-black text-white text-xl tracking-tight">AA <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">GRAPHIC STUDIO</span></p>
-                  <p className="text-amber-400/90 text-[11px] tracking-wide font-medium italic">&ldquo;Your Vision, Our Creation.&rdquo;</p>
-                </div>
+              <div className="flex flex-col gap-2 select-none">
+                <StudioLogo size="lg" />
+                <p className="text-amber-400/90 text-xs tracking-wide font-medium italic">&ldquo;Your Vision, Our Creation.&rdquo;</p>
               </div>
             </Link>
             <p className="text-stone-400 text-sm leading-relaxed max-w-sm">
