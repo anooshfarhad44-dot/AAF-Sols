@@ -237,7 +237,10 @@ const AboutUs = () => {
           {/* Info Badge */}
           <div className="absolute top-6 left-6 z-20 bg-white/95 backdrop-blur-xl p-6 rounded-2xl border border-stone-200/80 shadow-lg max-w-sm hidden md:block">
             <h3 className="font-bold text-xl text-stone-900 mb-1">AA Graphic Studio HQ</h3>
-            <p className="text-amber-600 mb-3 font-mono text-xs font-semibold">Islamabad, Pakistan</p>
+            <p className="text-amber-600 font-mono text-xs font-semibold leading-tight">
+              3-B, Basement Itehad Center, Fazal-ul-Haq Road
+            </p>
+            <p className="text-stone-500 text-xs mb-3 font-medium">Blue Area, Islamabad, Pakistan</p>
             <div className="space-y-2 text-xs text-stone-600">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-ping" />

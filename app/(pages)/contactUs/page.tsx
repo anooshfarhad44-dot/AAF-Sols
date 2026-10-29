@@ -165,14 +165,17 @@ const ContactUs = () => {
               </div>
 
               {/* Location */}
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-stone-50 border border-stone-200/80">
-                <div className="w-12 h-12 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-600 flex-shrink-0">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-stone-50 border border-stone-200/80">
+                <div className="w-12 h-12 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-600 flex-shrink-0 mt-0.5">
                   <MapPin size={22} />
                 </div>
                 <div>
-                  <p className="text-xs font-mono uppercase text-stone-500">Studio &amp; Press Facility</p>
-                  <p className="font-semibold text-stone-900 text-sm">Islamabad, Pakistan</p>
-                  <p className="text-[11px] text-stone-500">Express nationwide delivery</p>
+                  <p className="text-xs font-mono uppercase text-stone-500">Studio &amp; Office Address</p>
+                  <p className="font-semibold text-stone-900 text-sm leading-snug">
+                    3-B, Basement Itehad Center,<br />
+                    Fazal-ul-Haq Road, Blue Area, Islamabad
+                  </p>
+                  <p className="text-[11px] text-stone-500 mt-1">Walk-in client visits &bull; Express nationwide shipping</p>
                 </div>
               </div>
 

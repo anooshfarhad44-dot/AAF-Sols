@@ -11,12 +11,12 @@ const customIcon = new L.Icon({
 });
 
 const MapComponent = () => {
-  const position: [number, number] = [33.6844, 73.0479]; // Islamabad Coordinates
+  const position: [number, number] = [33.7118, 73.0610]; // Blue Area, Islamabad Coordinates
 
   return (
     <MapContainer 
       center={position} 
-      zoom={12} 
+      zoom={14} 
       style={{ height: '100%', width: '100%' }}
       scrollWheelZoom={false}
     >
@@ -26,10 +26,10 @@ const MapComponent = () => {
       />
       <Marker position={position} icon={customIcon}>
         <Popup>
-          <div className="text-center p-2 text-zinc-900">
-            <strong className="text-amber-600 font-bold">AA GRAPHIC STUDIO</strong><br />
-            <span className="text-xs text-zinc-600">Graphic Design &amp; Printing Hub</span><br />
-            <span className="text-[10px] text-zinc-500">Islamabad, Pakistan</span>
+          <div className="text-center p-2 text-zinc-900 leading-snug">
+            <strong className="text-amber-600 font-bold text-sm">AA GRAPHIC STUDIO</strong><br />
+            <span className="text-xs font-semibold text-stone-800">3-B, Basement Itehad Center</span><br />
+            <span className="text-[11px] text-zinc-600">Fazal-ul-Haq Road, Blue Area, Islamabad</span>
           </div>
         </Popup>
       </Marker>

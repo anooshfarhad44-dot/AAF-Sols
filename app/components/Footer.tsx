@@ -83,7 +83,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2.5">
                 <MapPin size={16} className="text-amber-400 mt-1 flex-shrink-0" />
-                <span>Islamabad, Pakistan &bull; Shipping Nationwide</span>
+                <span className="leading-snug">
+                  3-B, Basement Itehad Center,<br />
+                  Fazal-ul-Haq Road, Blue Area,<br />
+                  Islamabad, Pakistan
+                </span>
               </li>
               <li className="flex items-center gap-2.5">
                 <MessageCircle size={16} className="text-emerald-400 flex-shrink-0" />
